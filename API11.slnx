@@ -1,3 +1,4 @@
 <Solution>
-  <Project Path="API11/API11.csproj" />
+  <Project Path="API11/API11.csproj" Id="974c370e-641c-4594-b8a4-dffa462b4f86" />
+  <Project Path="API5/API5.csproj" Id="5d1de39f-073a-4468-9348-5e3b943f27bc" />
 </Solution>
