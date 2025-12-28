@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:API5"
               
-                  Title="Генератор обоев" 
+       Title="Генератор изображений" 
         Height="520" 
         Width="400"
         WindowStartupLocation="CenterScreen">
 
-    <Grid Background="#FFF6DBEB" Margin="0,0,0,-6">
+    <Grid Background="#009900" Margin="0,0,0,-6">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -18,11 +18,9 @@
         </Grid.RowDefinitions>
 
         <!-- Шапка -->
-        <Border Grid.Row="0" Background="#FF1A205C" Padding="15">
-            <Border.Effect>
-                <DropShadowEffect BlurRadius="15" ShadowDepth="10" Direction="285" Color="#BF6D68A1"/>
-            </Border.Effect>
-            <TextBlock Text="Генератор обоев" 
+        <Border Grid.Row="0" Background="#33ff33" Padding="15">
+           
+            <TextBlock Text="Изображения" 
                        Foreground="White" 
                        FontSize="18" 
                        FontWeight="Bold"
@@ -117,13 +115,11 @@
                 Width="200" 
                 Height="40"
                 Click="btnGenerate_Click"
-                Background="#FF224073"
+                Background="#33ff33"
                 Foreground="White"
                 Margin="100,386,100,30"
                 FontWeight="Bold" Grid.RowSpan="2">
-            <Button.Effect>
-                <DropShadowEffect BlurRadius="15" ShadowDepth="10" Color="#FF282D5B"/>
-            </Button.Effect>
+            
         </Button>
     </Grid>
 </Window>
