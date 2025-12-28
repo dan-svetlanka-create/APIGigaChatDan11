@@ -4,9 +4,126 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:API5"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+              
+                  Title="Генератор обоев" 
+        Height="520" 
+        Width="400"
+        WindowStartupLocation="CenterScreen">
 
+    <Grid Background="#FFF6DBEB" Margin="0,0,0,-6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Шапка -->
+        <Border Grid.Row="0" Background="#FF1A205C" Padding="15">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="10" Direction="285" Color="#BF6D68A1"/>
+            </Border.Effect>
+            <TextBlock Text="Генератор обоев" 
+                       Foreground="White" 
+                       FontSize="18" 
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"/>
+        </Border>
+
+        <!-- Основное содержимое -->
+        <Border Grid.Row="1" Margin="10,49,10,95" Background="White" CornerRadius="5">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,10,0,0">
+                <StackPanel Margin="15">
+
+                    <!-- Описание -->
+                    <TextBlock Text="Описание изображения:" 
+                               FontWeight="SemiBold" 
+                               Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtPrompt" 
+                             Height="60" 
+                             TextWrapping="Wrap"
+                             VerticalScrollBarVisibility="Auto"
+                             Text="Красивый горный пейзаж на закате"
+                             Margin="0,0,0,15"/>
+
+                    <!-- Стиль -->
+                    <TextBlock Text="Художественный стиль:" 
+                               FontWeight="SemiBold" 
+                               Margin="0,0,0,5"/>
+                    <ComboBox x:Name="cmbStyle" 
+                              SelectedIndex="0"
+                              Height="30"
+                              Margin="0,0,0,15" >
+                        <ComboBoxItem>Реализм</ComboBoxItem>
+                        <ComboBoxItem>Живопись</ComboBoxItem>
+                        <ComboBoxItem>Цифровой арт</ComboBoxItem>
+                        <ComboBoxItem>Аниме</ComboBoxItem>
+                        <ComboBoxItem>Минимализм</ComboBoxItem>
+                    </ComboBox>
+
+                    <!-- Цветовая палитра -->
+                    <TextBlock Text="Цветовая палитра:" 
+                               FontWeight="SemiBold" 
+                               Margin="0,0,0,5"/>
+                    <ComboBox x:Name="cmbPalette" 
+                              SelectedIndex="0"
+                              Height="30"
+                              Margin="0,0,0,15">
+                        <ComboBoxItem>Тёплые цвета</ComboBoxItem>
+                        <ComboBoxItem>Холодные цвета</ComboBoxItem>
+                        <ComboBoxItem>Пастельные тона</ComboBoxItem>
+                        <ComboBoxItem>Яркие цвета</ComboBoxItem>
+                        <ComboBoxItem>Монохромная</ComboBoxItem>
+                    </ComboBox>
+
+                    <!-- Соотношение сторон -->
+                    <TextBlock Text="Соотношение сторон:" 
+                               FontWeight="SemiBold" 
+                               Margin="0,0,0,5"/>
+                    <ComboBox x:Name="cmbAspect" 
+                              SelectedIndex="0"
+                              Height="30"
+                              Margin="0,0,0,15">
+                        <ComboBoxItem>16:9 (Широкоэкранный)</ComboBoxItem>
+                        <ComboBoxItem>4:3 (Стандартный)</ComboBoxItem>
+                        <ComboBoxItem>1:1 (Квадрат)</ComboBoxItem>
+                        <ComboBoxItem>9:16 (Вертикальный)</ComboBoxItem>
+                    </ComboBox>
+
+                    <!-- Праздничный режим -->
+                    <CheckBox x:Name="chkHoliday" 
+                              Content="Праздничная тема"
+                              Margin="0,0,0,10"/>
+
+                    <ComboBox x:Name="cmbHoliday" 
+                              SelectedIndex="0"
+                              Height="30"
+                              IsEnabled="False"
+                              Margin="0,0,0,20">
+                        <ComboBoxItem>Новый год</ComboBoxItem>
+                        <ComboBoxItem>Рождество</ComboBoxItem>
+                        <ComboBoxItem>День святого Валентина</ComboBoxItem>
+                        <ComboBoxItem>Хэллоуин</ComboBoxItem>
+                        <ComboBoxItem>День рождения</ComboBoxItem>
+                    </ComboBox>
+
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+        <!-- Кнопка -->
+        <Button Grid.Row="1" 
+                x:Name="btnGenerate" 
+                Content="Создать обои" 
+                Width="200" 
+                Height="40"
+                Click="btnGenerate_Click"
+                Background="#FF224073"
+                Foreground="White"
+                Margin="100,386,100,30"
+                FontWeight="Bold" Grid.RowSpan="2">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="10" Color="#FF282D5B"/>
+            </Button.Effect>
+        </Button>
     </Grid>
 </Window>
